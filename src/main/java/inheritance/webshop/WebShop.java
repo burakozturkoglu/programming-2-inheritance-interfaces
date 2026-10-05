@@ -1,5 +1,6 @@
 package inheritance.webshop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WebShop {
@@ -20,10 +21,24 @@ public class WebShop {
      * @param bikes  a list of bikes
      * @return a list of all the products in the same order as the given lists
      */
-    public List<Product> combineListsOfProducts(List<Product> mugs, List<Product> shirts,
+	public List<Product> combineListsOfProducts(List<Product> mugs, List<Product> shirts,
             List<Vehicle> cars, List<Vehicle> bikes) {
+        List<Product> combined = new ArrayList<>();
 
-        return null; // TODO: implement this method
+        if (mugs != null) {
+            combined.addAll(mugs);
+        }
+        if (shirts != null) {
+            combined.addAll(shirts);
+        }
+        if (cars != null) {
+            combined.addAll(cars);
+        }
+        if (bikes != null) {
+            combined.addAll(bikes);
+        }
+
+        return combined;
     }
 
     /**
@@ -37,8 +52,8 @@ public class WebShop {
      * @param obj the object to check
      * @return true if the given object is a Vehicle, false otherwise
      */
-    public boolean isVehicle(Object obj) {
-        return false; // TODO: implement this method
+	public boolean isVehicle(Object obj) {
+        return obj instanceof Vehicle;
     }
 
     /**
@@ -49,7 +64,10 @@ public class WebShop {
      * @param obj the object to check
      * @return true if the given object is a Product, false otherwise
      */
-    public boolean isProduct(Object obj) {
-        return false; // TODO: implement this method
+	public boolean isProduct(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        return obj.getClass() == Product.class;
     }
 }

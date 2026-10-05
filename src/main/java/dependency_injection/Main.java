@@ -27,7 +27,7 @@ public class Main {
      */
     public static void main(String... args) {
 
-        /*
+    	/*
          * A new application object is created with the System.out object as an
          * argument. Run this code and see the output.
          */
@@ -37,16 +37,10 @@ public class Main {
         /*
          * After running the code, try creating an Application and passing in an
          * instance of the PrinterWithTimestamp class as an argument.
-         *
-         * PrinterWithTimestamp printer = new PrinterWithTimestamp();
-         * ...
-         *
-         * Then run this class again and see what happens.
-         *
-         * What a nice way to change the behavior of the Java class without changing its
-         * code, right? This is especially useful when you are using a class that you
-         * cannot modify, such as a class from a third-party library.
          */
+        PrinterWithTimestamp printer = new PrinterWithTimestamp();
+        Application appWithTimestamp = new Application(printer);
+        appWithTimestamp.run();
 
     }
 }

@@ -28,5 +28,10 @@ package interfaces.markdown;
  */
 public interface MarkdownExport {
 
-    // TODO: define the method here
+	/**
+     * Returns a Markdown representation of the object.
+     *
+     * @return the Markdown formatted String
+     */
+    String exportMarkdown();
 }
